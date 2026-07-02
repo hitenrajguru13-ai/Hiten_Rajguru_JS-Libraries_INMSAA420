@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ridgeline Treks | Premium Mountain Adventures</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,800&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Library CSS: AOS scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+  <!-- Library CSS: Glide.js carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css" />
+
+  <!-- Library CSS: Leaflet interactive map -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+  <!-- My CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!--
+    JS Libraries used in this assignment:
+    1. GSAP - premium hero, card, and counter animations
+    2. AOS - scroll reveal animations
+    3. Glide.js - image gallery carousel
+    4. Leaflet - interactive route map
+    5. Chart.js - route difficulty line chart
+  -->
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <header class="site-header">
+    <nav class="nav wrap">
+      <a href="#home" class="brand">Ridgeline <span>Treks</span></a>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#treks">Treks</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#map">Route Map</a></li>
+        <li><a href="#difficulty">Difficulty</a></li>
+      </ul>
+
+      <a href="#booking" class="btn nav-btn">Plan a trek</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="wrap hero-content">
+        <p class="eyebrow hero-eyebrow">Himalayan foothills — Est. 2014</p>
+        <h1 class="hero-title">Walk the ridgeline, not the road.</h1>
+        <p class="hero-text">
+          Premium small-group treks through high valleys, quiet mountain villages, and cinematic ridgelines built for travellers who want the real route.
+        </p>
+        <div class="hero-actions">
+          <a href="#treks" class="btn">Explore routes</a>
+          <a href="#map" class="btn btn-outline">View route map</a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat">
+            <strong class="counter" data-target="11">0</strong>
+            <span>Active routes</span>
+          </div>
+          <div class="stat">
+            <strong class="counter" data-target="4200">0</strong>
+            <span>Highest pass</span>
+          </div>
+          <div class="stat">
+            <strong class="counter" data-target="6">0</strong>
+            <span>Max group size</span>
+          </div>
+          <div class="stat">
+            <strong class="counter" data-target="96">0</strong>
+            <span>Summit success</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section intro">
+      <div class="wrap two-grid">
+        <div data-aos="fade-up">
+          <p class="eyebrow">Why Ridgeline</p>
+          <h2>Built like a luxury adventure brand, but grounded in real trail experience.</h2>
+        </div>
+        <div class="intro-copy" data-aos="fade-up" data-aos-delay="120">
+          <p>
+            Every trek includes acclimatisation planning, local guides, safety checks, and route briefings before the first step. The experience is premium, but the mountains stay honest.
+          </p>
+          <div class="mini-features">
+            <span>Local guides</span>
+            <span>Small groups</span>
+            <span>Real route data</span>
+            <span>Photo-ready trails</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="treks">
+      <div class="wrap">
+        <div class="section-head light" data-aos="fade-up">
+          <p class="eyebrow">This season</p>
+          <h2>Three routes, three kinds of hard.</h2>
+          <p>
+            Each route is graded by altitude, terrain, and walking hours instead of simple marketing words.
+          </p>
+        </div>
+
+        <div class="trek-grid">
+          <article class="trek-card" data-aos="fade-up">
+            <div class="card-top">
+              <span>Route 01</span>
+              <span>Hard</span>
+            </div>
+            <h3>Kanchen Ridge Traverse</h3>
+            <p>Nine days on an exposed ridge with high viewpoints, cloud-line mornings, and one serious summit push.</p>
+            <div class="tags">
+              <span>9 days</span>
+              <span>3,850m</span>
+              <span>7 hr/day</span>
+            </div>
+          </article>
+
+          <article class="trek-card featured" data-aos="fade-up" data-aos-delay="120">
+            <div class="card-top">
+              <span>Route 02</span>
+              <span>Moderate</span>
+            </div>
+            <h3>Marsyandi Valley Loop</h3>
+            <p>A smoother loop through terraced villages, rhododendron forest, suspension bridges, and warm local stays.</p>
+            <div class="tags">
+              <span>6 days</span>
+              <span>2,600m</span>
+              <span>4.5 hr/day</span>
+            </div>
+          </article>
+
+          <article class="trek-card" data-aos="fade-up" data-aos-delay="240">
+            <div class="card-top">
+              <span>Route 03</span>
+              <span>Very hard</span>
+            </div>
+            <h3>Chandratal Pass</h3>
+            <p>High-altitude desert trekking toward a glacial lake, with long climbs and dramatic final approach views.</p>
+            <div class="tags">
+              <span>7 days</span>
+              <span>4,200m</span>
+              <span>6.5 hr/day</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark gallery-section" id="gallery">
+      <div class="wrap">
+        <div class="section-head center light" data-aos="fade-up">
+          <p class="eyebrow">From the trail</p>
+          <h2>A look around the ridgeline.</h2>
+          <p>Brar-style premium gallery layout using Glide.js, autoplay, and clean navigation dots.</p>
+        </div>
+
+        <div class="glide gallery-slider" data-aos="fade-up">
+          <div class="glide__track" data-glide-el="track">
+            <ul class="glide__slides">
+              <li class="glide__slide">
+                <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=85" alt="Mountain ridge at sunrise" />
+                <div class="slide-caption">
+                  <span>Kanchen Ridge</span>
+                  <strong>Sunrise above the cloud line</strong>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <img src="./image/ebbb254d6c25a6b3d5e547199fd429e4.jpg" alt="Snowy mountain under stars" />
+                <div class="slide-caption">
+                  <span>Base Camp</span>
+                  <strong>Night sky over the high valley</strong>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <img src="./image/822ba9eb1e02309f7af716e3d4cbde64.jpg" alt="High mountain landscape" />
+                <div class="slide-caption">
+                  <span>Chandratal Pass</span>
+                  <strong>The climb before the lake</strong>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <img src="./image/c4511b747244b18f3cbab4f28de35d5f.jpg" alt="Forest hiking path" />
+                <div class="slide-caption">
+                  <span>Marsyandi Loop</span>
+                  <strong>Forest walk through the valley</strong>
+                </div>
+              </li>
+              <li class="glide__slide">
+                <img src="./image/36fbadeaf4b2b5d292fc5f9b9eefe5ec.jpg" alt="Mountain valley" />
+                <div class="slide-caption">
+                  <span>Village Trail</span>
+                  <strong>Local route beyond the road</strong>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="glide__bullets" data-glide-el="controls[nav]">
+            <button class="glide__bullet" data-glide-dir="=0" aria-label="Slide 1"></button>
+            <button class="glide__bullet" data-glide-dir="=1" aria-label="Slide 2"></button>
+            <button class="glide__bullet" data-glide-dir="=2" aria-label="Slide 3"></button>
+            <button class="glide__bullet" data-glide-dir="=3" aria-label="Slide 4"></button>
+            <button class="glide__bullet" data-glide-dir="=4" aria-label="Slide 5"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section map-section" id="map">
+      <div class="wrap two-grid">
+        <div data-aos="fade-right">
+          <p class="eyebrow">Route map</p>
+          <h2>Interactive starting points.</h2>
+          <p>
+            This Leaflet map shows the approximate starting region for each trek. Click any marker to see route details.
+          </p>
+          <div class="map-list">
+            <span><i class="dot orange"></i> Kanchen Ridge Traverse</span>
+            <span><i class="dot green"></i> Marsyandi Valley Loop</span>
+            <span><i class="dot gold"></i> Chandratal Pass</span>
+          </div>
+        </div>
+
+        <div class="map-card" data-aos="fade-left">
+          <div id="trailMap"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="difficulty">
+      <div class="wrap">
+        <div class="section-head light" data-aos="fade-up">
+          <p class="eyebrow">Know before you book</p>
+          <h2>How hard is each route?</h2>
+          <p>
+            Chart.js compares each route based on terrain, altitude, walking hours, and final difficulty score.
+          </p>
+        </div>
+
+        <div class="chart-panel" data-aos="zoom-in">
+          <canvas id="difficultyChart"></canvas>
+
+          <div class="fallback-chart" id="fallbackChart">
+            <div>
+              <strong>Kanchen Ridge</strong>
+              <span style="width:85%">Hard — 8.5 / 10</span>
+            </div>
+            <div>
+              <strong>Marsyandi Valley</strong>
+              <span style="width:55%">Moderate — 5.5 / 10</span>
+            </div>
+            <div>
+              <strong>Chandratal Pass</strong>
+              <span style="width:95%">Very hard — 9.5 / 10</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section booking" id="booking">
+      <div class="wrap booking-box" data-aos="fade-up">
+        <div>
+          <p class="eyebrow">Ready for the ridge?</p>
+          <h2>Plan your mountain escape.</h2>
+          <p>Tell us your dates, fitness level, and preferred route. We will recommend the safest and most exciting trek.</p>
+        </div>
+        <a href="mailto:hello@ridgelinetreks.example" class="btn">Book a session</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <a href="#home" class="brand footer-brand">Ridgeline <span>Treks</span></a>
+        <p>Premium small-group trekking experiences in the Himalayan foothills.</p>
+      </div>
+      <div>
+        <h4>Libraries used</h4>
+        <p>GSAP, AOS, Glide.js, Leaflet, and Chart.js.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Library JS: Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Library JS: GSAP -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13/dist/gsap.min.js"></script>
+
+  <!-- Library JS: AOS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- Library JS: Glide.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+
+  <!-- Library JS: Leaflet -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <!-- My JS -->
+  <script src="script.js"></script>
+</body>
+</html>
